@@ -2,3 +2,5 @@ metaProgramming/*.png
 metaProgramming/*.aux
 metaProgramming/*.log
 metaProgramming/*.pdf
+DebuggingProfiling/.mypy_cache*
+*.lprof
