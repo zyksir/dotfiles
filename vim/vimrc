@@ -1,0 +1,215 @@
+" If you open this file in Vim, it'll be syntax highlighted for you.
+syntax enable
+" 允许用指定语法高亮配色方案替换默认方案
+syntax on
+
+"show line numbers.
+set number
+" This enables relative line numbering mode. With both number and
+" relativenumber enabled, the current line shows the true line number, while
+" all other lines (above and below) are numbered relative to the current line.
+" This is useful because you can tell, at a glance, what count is needed to
+" jump up or down to a particular line, by {count}k to go up or {count}j to go
+" down.
+set relativenumber
+
+"always show status bar
+set laststatus=2
+
+"高亮显示搜索结果
+set hlsearch
+
+" Enable searching as you type, rather than waiting till you press enter.
+set incsearch
+
+" This setting makes search case-insensitive when all characters in the string
+" being searched are lowercase. However, the search becomes case-sensitive if
+" it contains any capital letters. This makes searching more convenient.
+set ignorecase
+set smartcase
+
+" Vim is based on Vi. Setting `nocompatible` switches from the default
+" Vi-compatibility mode and enables useful Vim functionality. This
+" configuration option turns out not to be necessary for the file named
+" '~/.vimrc', because Vim automatically enters nocompatible mode if that file
+" is present. But we're including it here just in case this config file is
+" loaded some other way (e.g. saved as `foo`, and then Vim started with
+" `vim -u foo`).
+set nocompatible
+
+"Configuration file for vim
+set modelines=0		" CVE-2007-2438
+
+" Normally we use vim-extensions. If you want true vi-compatibility
+" remove change the following statements
+set nocompatible	" Use Vim defaults instead of 100% vi 
+
+" By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
+" shown in any window) that has unsaved changes. This is to prevent you from "
+" forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find
+" hidden buffers helpful enough to disable this protection. See `:help hidden`
+" for more information on this.
+set hidden
+
+" The backspace key has slightly unintuitive behavior by default. For example,
+" by default, you can't backspace before the insertion point set with 'i'.
+" This configuration makes backspace behave more reasonably, in that you can
+" backspace over anything.
+set backspace=indent,eol,start		" more powerful backspacing
+
+" Don't write backup file if vim is being called by "crontab -e"
+au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
+" Don't write backup file if vim is being called by "chpass"
+au BufWrite /private/etc/pw.* set nowritebackup nobackup
+
+"激活鼠标
+set mouse+=a
+
+"禁止光标闪烁
+set gcr=a:block-blinkon0
+"禁止显示滚动条
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+"禁止显示菜单和工具条
+set guioptions-=m
+set guioptions-=T
+
+" --- Plug setup --- "
+call plug#begin('~/.vim/plugged')
+Plug 'VundleVim/Vundle.vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'altercation/vim-colors-solarized'
+"Plug 'Lokaltog/vim-powerline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'Yggdroot/indentLine'
+" switch between .h and .cpp files, :FSHere, :FSLeft, :FSSwitchLeft
+Plug 'derekwyatt/vim-fswitch'
+" toggle, jump to next/pre, show all, bookmarks: mm, mn/mp, ma
+Plug 'MattesGroeger/vim-bookmarks'
+" highlight marked line, F1, F2
+Plug 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
+Plug 'dyng/ctrlsf.vim'
+Plug 'mileszs/ack.vim'
+" comment/uncomment code, <Leader>cc, <Leader>cu
+Plug 'scrooloose/nerdcommenter'
+Plug 'Raimondi/delimitMate'
+"Plug 'fholgado/minibufexpl.vim'
+Plug 'jlanzarotta/bufexplorer'
+"Plug 'ap/vim-buftabline'
+" browse undo tree
+Plug 'sjl/gundo.vim'
+Plug 'pseewald/vim-anyfold'
+" git
+Plug 'tpope/vim-fugitive'
+" tags 
+Plug 'ludovicchabant/vim-gutentags'
+" LeaderF = tagbar + ctrlp
+Plug 'Yggdroot/LeaderF'
+Plug 'neomake/neomake'
+"Plug 'kien/ctrlp.vim'
+call plug#end()
+
+call neomake#configure#automake('w')
+
+"定义快捷键前缀
+let mapleader=","
+"设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y
+"设置快捷键将系统剪贴板内容粘贴至 vim
+nmap <Leader>p "+p
+"定义快捷键关闭当前分割窗口
+nmap <Leader>q :q<CR>
+"定义快捷键保存当前窗口内容
+nmap <Leader>w :w<CR>
+"定义快捷键保存所有窗口内容并退出 vim
+nmap <Leader>WQ :wa<CR>:q<CR>
+"不做任何保存，直接退出 vim
+nmap <Leader>Q :qa!<CR>
+
+" 依次遍历子窗口
+nnoremap nw <C-W><C-W>
+" 跳转至右方的窗口
+nnoremap <Leader>lw <C-W>l
+" 跳转至左方的窗口
+nnoremap <Leader>hw <C-W>h
+" 跳转至上方的子窗口
+nnoremap <Leader>kw <C-W>k
+" 跳转至下方的子窗口
+nnoremap <Leader>jw <C-W>j
+
+" --- buffer window tab ---"
+nnoremap <silent> <Leader>bl :ToggleBufExplorer<CR>
+nnoremap <silent> <Leader>bd :bd<CR>
+
+"vim 自身命令行模式智能补全
+set wildmenu
+
+"文件类型探测
+filetype on
+filetype plugin on
+filetype plugin indent on
+
+"配色方案
+set background=dark
+" colorscheme codedark
+
+"highlight current line and column
+set cursorline
+"set cursorcolumn
+
+"自适应不同语言的智能缩进
+filetype indent on
+"将制表符扩展为空格
+set noexpandtab
+"设置编辑时制表符占用空格数
+set tabstop=4
+"设置格式化时制表符占用空格数
+set shiftwidth=4
+"让 vim 把连续数量的空格视为一个制表符
+set softtabstop=4
+"禁止折行
+set wrap
+
+"折叠
+set foldlevel=0
+
+"基于缩进或语法进行代码折叠
+set foldmethod=indent
+"启动 vim 时关闭折叠代码
+set nofoldenable
+
+let g:ctrlsf_ackprg = 'ack'
+nmap <leader>ff <Plug>CtrlSFPrompt
+nmap <leader>fc <Plug>CtrlSFCwordPath
+nnoremap <leader>ft :CtrlSFToggle<CR>
+
+" --- indentLine --- "
+let g:indentLine_enabled=1
+
+" --- 使用 gutentags 支持增量更新tag --- "
+"gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+
+"将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+
+"检测 ~/.cache/tags 不存在就新建
+if !isdirectory(s:vim_tags)
+	silent! call mkdir(s:vim_tags, 'p')
+endif
+
+" --- 括号补全 --- "
+let g:delimitMate_expand_cr = 1
+
+" 保存undo历史, redo:ctrl-r
+set undodir=~/.undo_history/
+set undofile
+
+" The End
