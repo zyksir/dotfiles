@@ -76,46 +76,46 @@ set guioptions-=R
 set guioptions-=m
 set guioptions-=T
 
-" --- Plug setup --- "
-call plug#begin('~/.vim/plugged')
-Plug 'VundleVim/Vundle.vim'
-Plug 'tomasiser/vim-code-dark'
-Plug 'altercation/vim-colors-solarized'
-"Plug 'Lokaltog/vim-powerline'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'Yggdroot/indentLine'
-" switch between .h and .cpp files, :FSHere, :FSLeft, :FSSwitchLeft
-Plug 'derekwyatt/vim-fswitch'
-" toggle, jump to next/pre, show all, bookmarks: mm, mn/mp, ma
-Plug 'MattesGroeger/vim-bookmarks'
-" highlight marked line, F1, F2
-Plug 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
-Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree'
-Plug 'dyng/ctrlsf.vim'
-Plug 'mileszs/ack.vim'
-" comment/uncomment code, <Leader>cc, <Leader>cu
-Plug 'scrooloose/nerdcommenter'
-Plug 'Raimondi/delimitMate'
-"Plug 'fholgado/minibufexpl.vim'
-Plug 'jlanzarotta/bufexplorer'
-"Plug 'ap/vim-buftabline'
-" browse undo tree
-Plug 'sjl/gundo.vim'
-Plug 'pseewald/vim-anyfold'
-" git
-Plug 'tpope/vim-fugitive'
-" tags 
-Plug 'ludovicchabant/vim-gutentags'
-" LeaderF = tagbar + ctrlp
-Plug 'Yggdroot/LeaderF'
-Plug 'neomake/neomake'
-"Plug 'kien/ctrlp.vim'
-call plug#end()
+" " --- Plug setup --- "
+" call plug#begin('~/.vim/plugged')
+" Plug 'VundleVim/Vundle.vim'
+" Plug 'tomasiser/vim-code-dark'
+" Plug 'altercation/vim-colors-solarized'
+" "Plug 'Lokaltog/vim-powerline'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'octol/vim-cpp-enhanced-highlight'
+" Plug 'Yggdroot/indentLine'
+" " switch between .h and .cpp files, :FSHere, :FSLeft, :FSSwitchLeft
+" Plug 'derekwyatt/vim-fswitch'
+" " toggle, jump to next/pre, show all, bookmarks: mm, mn/mp, ma
+" Plug 'MattesGroeger/vim-bookmarks'
+" " highlight marked line, F1, F2
+" Plug 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
+" Plug 'majutsushi/tagbar'
+" Plug 'scrooloose/nerdtree'
+" Plug 'dyng/ctrlsf.vim'
+" Plug 'mileszs/ack.vim'
+" " comment/uncomment code, <Leader>cc, <Leader>cu
+" Plug 'scrooloose/nerdcommenter'
+" Plug 'Raimondi/delimitMate'
+" "Plug 'fholgado/minibufexpl.vim'
+" Plug 'jlanzarotta/bufexplorer'
+" "Plug 'ap/vim-buftabline'
+" " browse undo tree
+" Plug 'sjl/gundo.vim'
+" Plug 'pseewald/vim-anyfold'
+" " git
+" Plug 'tpope/vim-fugitive'
+" " tags 
+" Plug 'ludovicchabant/vim-gutentags'
+" " LeaderF = tagbar + ctrlp
+" Plug 'Yggdroot/LeaderF'
+" Plug 'neomake/neomake'
+" "Plug 'kien/ctrlp.vim'
+" call plug#end()
 
-call neomake#configure#automake('w')
+" call neomake#configure#automake('w')
 
 "定义快捷键前缀
 let mapleader=","
