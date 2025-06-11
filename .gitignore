@@ -5,3 +5,4 @@ metaProgramming/*.pdf
 DebuggingProfiling/.mypy_cache*
 *.lprof
 DebuggingProfiling/*.png
+local_file
