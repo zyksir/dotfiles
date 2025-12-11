@@ -11,6 +11,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 cp zsh/zshrc ~/.zshrc
 cp vim/vimrc ~/.vimrc
-cp tmux/tmux.conf.ini .tmux.conf
-cp git/gitconfig.ini .gitconfig
-cp git/gitignore_global .gitignore_global
+cp tmux/tmux.conf.ini ~/.tmux.conf
+cp git/gitconfig.ini ~/.gitconfig
+cp git/gitignore_global ~/.gitignore_global
