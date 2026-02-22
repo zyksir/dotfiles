@@ -1,0 +1,9 @@
+# dotfiles
+
+This is a collection of dotfiles for my development environment.
+
+## Setup
+
+```bash
+sh setup.sh
+```
