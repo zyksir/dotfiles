@@ -1,11 +1,6 @@
 #!/bin/sh
 
-# Install zsh: apt on Linux, Oh My Zsh installer elsewhere (e.g. macOS)
-if [[ "$(uname)" = "Linux" ]]; then
-  apt install -y zsh
-else
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 export MY_DOTFILES_DIR="$HOME/.my_dotfiles"
 export ZSH="$HOME/.zsh"
