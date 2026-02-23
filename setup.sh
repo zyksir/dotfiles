@@ -2,7 +2,7 @@
 
 # Install zsh: apt on Linux, Oh My Zsh installer elsewhere (e.g. macOS)
 if [[ "$(uname)" = "Linux" ]]; then
-  apt install zsh
+  apt install -y zsh
 else
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi

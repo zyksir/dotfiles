@@ -31,5 +31,5 @@ alias dils='docker image ls'
 dit() { docker exec -it "$1" /bin/bash; }
 dzit() { docker exec -it "$1" /bin/zsh; }
 
-source $MY_DOTFILES_DIR/dotfiles/aliases/git_aliases.sh
-source $MY_DOTFILES_DIR/dotfiles/aliases/kubectl_aliases.sh
+source $MY_DOTFILES_DIR/aliases/git_aliases.sh
+source $MY_DOTFILES_DIR/aliases/kubectl_aliases.sh
