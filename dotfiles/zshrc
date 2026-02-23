@@ -28,3 +28,9 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source $MY_DOTFILES_DIR/aliases.sh
+
+if [[ ! -f localdev_venv/bin/activate ]]; then
+  pip install uv
+  uv venv localdev_venv
+fi
+source localdev_venv/bin/activate

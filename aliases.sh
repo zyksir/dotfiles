@@ -6,6 +6,8 @@ DOTDIR=$HOME/.me
 alias v="vim"
 
 # todo: move to a dotedit function that auto-completes
+alias gpu='nvidia-smi'
+alias gpum='nvidia-smi --query-gpu=name,memory.used,memory.total,utilization.gpu --format=csv'
 alias sbash="source ~/.bashrc"
 alias sgitrc="source $DOTDIR/aliases/git_aliases.sh"
 alias skubectlrc="source $DOTDIR/aliases/kubectl_aliases.sh"
