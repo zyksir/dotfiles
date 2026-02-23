@@ -29,7 +29,7 @@ alias tls="tmux ls"
 alias dps='docker ps'
 alias dils='docker image ls'
 dit() { docker exec -it "$1" /bin/bash; }
-dzit() { docker exec -it "$1" /bin/zsh; }
+dzit() { docker exec -it "$1" zsh; }
 
 source $MY_DOTFILES_DIR/aliases/git_aliases.sh
 source $MY_DOTFILES_DIR/aliases/kubectl_aliases.sh
