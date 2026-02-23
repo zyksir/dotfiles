@@ -1,5 +1,6 @@
 #!/bin/sh
 
+export MY_DOTFILES_DIR="$HOME/.my_dotfiles"
 # This should match the one in bootstrap
 DOTDIR=$HOME/.me
 alias v="vim"
@@ -29,3 +30,6 @@ alias dps='docker ps'
 alias dils='docker image ls'
 dit() { docker exec -it "$1" /bin/bash; }
 dzit() { docker exec -it "$1" /bin/zsh; }
+
+source $MY_DOTFILES_DIR/dotfiles/aliases/git_aliases.sh
+source $MY_DOTFILES_DIR/dotfiles/aliases/kubectl_aliases.sh

@@ -5,6 +5,10 @@ fi
 
 # baseten
 alias k="kubectl"
+
+kit() { k exec -it "$1" -- /bin/bash; }
+kzit() { k exec -it "$1" -- /bin/zsh;  }
+
 alias kd="kubectl describe"
 alias kdd="kubectl describe deployment"
 alias kdp="kubectl describe pod"
@@ -82,10 +86,6 @@ function knsb {
   local NEWNS='baseten'
   kubectl config set-context $CTX --namespace=$NEWNS
   echo "new namespace: $NEWNS"
-}
-
-function kit {
-  kubectl exec -it $@ user-container -- /bin/bash
 }
 
 function kitdraft {

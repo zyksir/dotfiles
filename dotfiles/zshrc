@@ -8,19 +8,23 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+export DISABLE_AUTO_UPDATE="true"
+export DISABLE_UPDATE_PROMPT="true"
+export MY_DOTFILES_DIR="$HOME/.my_dotfiles"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions z autoupdate)
-UPDATE_ZSH_DAYS=14
+UPDATE_ZSH_DAYS=16
 ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
+if [[ "$(uname)" = "Linux" ]]; then
+  ZSH_THEME="philips"
+else
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+fi
 source $ZSH/oh-my-zsh.sh
-# source ~/.z.sh
-# source ~/.bashrc
-
-# opam configuration
-[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[ -f ~/.z.sh ] && source ~/.z.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+source $MY_DOTFILES_DIR/aliases.sh
