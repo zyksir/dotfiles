@@ -1,9 +1,11 @@
 #!/bin/sh
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# if zsh is not installed, install it
+apt install -y zsh
+export ZSH="$HOME/.zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 export MY_DOTFILES_DIR="$HOME/.my_dotfiles"
-export ZSH="$HOME/.zsh"
 export ZSH_CUSTOM="$ZSH/custom"
 if [[ ! -d ${ZSH_CUSTOM}/plugins/autoupdate ]]; then
     git clone --depth=1 https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ${ZSH_CUSTOM}/plugins/autoupdate
