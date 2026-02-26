@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # if zsh is not installed, install it
 apt install -y zsh

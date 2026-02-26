@@ -6,5 +6,5 @@ This is a collection of dotfiles for my development environment.
 
 ```bash
 export MY_DOTFILES_DIR="$HOME/.my_dotfiles"
-git clone https://github.com/zyksir/dotfiles.git $MY_DOTFILES_DIR && sh $MY_DOTFILES_DIR/setup.sh && zsh
+git clone https://github.com/zyksir/dotfiles.git $MY_DOTFILES_DIR && bash $MY_DOTFILES_DIR/setup.sh && zsh
 ```
