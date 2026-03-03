@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # if zsh is not installed, install it
+apt update
 apt install -y zsh
 export ZSH="$HOME/.zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
