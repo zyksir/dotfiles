@@ -4,6 +4,9 @@
 apt update
 apt install -y zsh
 export ZSH="$HOME/.zsh"
+if [[ -d $ZSH ]]; then
+    mv $ZSH $ZSH.old
+fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 export MY_DOTFILES_DIR="$HOME/.my_dotfiles"
