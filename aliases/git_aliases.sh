@@ -4,6 +4,7 @@ git config --global user.email "zhuyikai.zyk@gmail.com"
 git config --global core.editor "vim"
 
 alias ga="git add"
+alias gpull="git pull"
 alias gs="git status"
 alias gdc="git diff --cached"
 alias gl="git log"
