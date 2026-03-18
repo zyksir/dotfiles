@@ -22,10 +22,12 @@ else
   ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
 source $ZSH/oh-my-zsh.sh
-[ -f ~/.z.sh ] && source ~/.z.sh
+[[ -f ~/.z.sh ]] && source ~/.z.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
 source $MY_DOTFILES_DIR/aliases.sh
 

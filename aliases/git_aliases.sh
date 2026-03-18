@@ -7,14 +7,20 @@ alias ga="git add"
 alias gs="git status"
 alias gdc="git diff --cached"
 alias gl="git log"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gb="git branch"
+alias gba="git branch -a"
+alias gbf="git branch -a | fzf"
+
+
 alias gl1="git log --oneline"
 alias ggph="git log --oneline --all --graph"
 alias glp="git log -p"
 
 # git commit with message
-alias gm="git commit -m"
-alias gco="git checkout"
-alias gb="git branch"
 alias gg="git grep"
 alias gdo="git diff origin"
 alias gpo="git push origin"

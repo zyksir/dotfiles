@@ -14,6 +14,7 @@ alias skubectlrc="source $DOTDIR/aliases/kubectl_aliases.sh"
 
 alias ls="ls -Gp --color"
 alias ll="ls -l"
+alias lsa="ls -lash"
 alias cls="clear && ls"
 alias grep='grep --color=auto'
 alias timestamp="date +%s"
@@ -30,12 +31,14 @@ alias tls="tmux ls"
 
 alias dps='docker ps'
 alias dils='docker image ls'
-alias dstop='docker stop'
 alias dstart='docker start'
-alias drestart='docker kill'
-alias dlogs='docker logs'
+alias dstop='docker stop'
+alias drestart='docker restart'
 alias drm='docker rm'
-
+alias drmi='docker rmi'
+alias dpull='docker pull'
+alias dpush='docker push'
+alias dtag='docker tag'
 dit() { docker exec -it "$1" /bin/bash; }
 dzit() { docker exec -it "$1" zsh; }
 
