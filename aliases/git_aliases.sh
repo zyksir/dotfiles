@@ -12,8 +12,10 @@ alias ggph="git log --oneline --all --graph"
 alias glp="git log -p"
 
 # git commit with message
-alias gm="git commit -m"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
 alias gco="git checkout"
+alias gcb="git checkout -b"
 alias gb="git branch"
 alias gg="git grep"
 alias gdo="git diff origin"

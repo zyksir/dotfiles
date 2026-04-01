@@ -32,9 +32,9 @@ alias dps='docker ps'
 alias dils='docker image ls'
 alias dstop='docker stop'
 alias dstart='docker start'
-alias drestart='docker kill'
+alias dkill='docker kill'
 alias dlogs='docker logs'
-alias drm='docker rm'
+drm() { docker stop "$1"; docker rm "$1"; }
 
 dit() { docker exec -it "$1" /bin/bash; }
 dzit() { docker exec -it "$1" zsh; }
