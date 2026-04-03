@@ -30,6 +30,11 @@ if [[ ! -d ${ZSH_CUSTOM}/themes/powerlevel10k ]]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
 fi
 
+if [[ ! -d ${ZSH_CUSTOM}/.fzf ]]; then
+    git clone --depth=1 https://github.com/junegunn/fzf.git ${ZSH_CUSTOM}/.fzf
+    ${ZSH_CUSTOM}/.fzf/install --all
+fi
+
 cp $MY_DOTFILES_DIR/dotfiles/zshrc ~/.zshrc
 cp $MY_DOTFILES_DIR/dotfiles/vimrc ~/.vimrc
 cp $MY_DOTFILES_DIR/dotfiles/tmux.conf.ini ~/.tmux.conf
