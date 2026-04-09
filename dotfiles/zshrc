@@ -35,3 +35,8 @@ if [[ ! -f localdev_venv/bin/activate ]]; then
 fi
 source localdev_venv/bin/activate
 
+export PATH=$PATH:${ZSH_CUSTOM}/.fzf/bin
+if command -v fzf &> /dev/null; then
+  source <(fzf --zsh)
+fi
+

@@ -36,8 +36,6 @@ if [[ ! -d ${ZSH_CUSTOM}/.fzf ]]; then
 fi
 
 cp $MY_DOTFILES_DIR/dotfiles/zshrc ~/.zshrc
-echo "export PATH=\$PATH:${ZSH_CUSTOM}/.fzf/bin" >> ~/.zshrc
-echo "[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh" >> ~/.zshrc
 cp $MY_DOTFILES_DIR/dotfiles/vimrc ~/.vimrc
 cp $MY_DOTFILES_DIR/dotfiles/tmux.conf.ini ~/.tmux.conf
 cp $MY_DOTFILES_DIR/dotfiles/gitconfig.ini ~/.gitconfig
