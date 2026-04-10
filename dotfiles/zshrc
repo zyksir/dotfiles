@@ -29,14 +29,13 @@ source $ZSH/oh-my-zsh.sh
 
 source $MY_DOTFILES_DIR/aliases.sh
 
+if command -v fzf &> /dev/null; then
+  source <(fzf --zsh)
+fi
+
 if [[ ! -f localdev_venv/bin/activate ]]; then
   pip install uv
   uv venv localdev_venv
 fi
 source localdev_venv/bin/activate
-
-export PATH=$PATH:${ZSH_CUSTOM}/.fzf/bin
-if command -v fzf &> /dev/null; then
-  source <(fzf --zsh)
-fi
 

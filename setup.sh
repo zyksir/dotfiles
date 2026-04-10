@@ -33,6 +33,7 @@ fi
 if [[ ! -d ${ZSH_CUSTOM}/.fzf ]]; then
     git clone --depth=1 https://github.com/junegunn/fzf.git ${ZSH_CUSTOM}/.fzf
     ${ZSH_CUSTOM}/.fzf/install --all --bin
+    mv ${ZSH_CUSTOM}/.fzf/bin/* /usr/local/bin/
 fi
 
 cp $MY_DOTFILES_DIR/dotfiles/zshrc ~/.zshrc
