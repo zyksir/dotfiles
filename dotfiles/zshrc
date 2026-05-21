@@ -33,9 +33,3 @@ if command -v fzf &> /dev/null; then
   source <(fzf --zsh)
 fi
 
-if [[ ! -f localdev_venv/bin/activate ]]; then
-  pip install uv
-  uv venv localdev_venv
-fi
-source localdev_venv/bin/activate
-
