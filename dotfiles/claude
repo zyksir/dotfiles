@@ -1,0 +1,23 @@
+# Engineering Guidelines
+
+## Minimize Changes
+- Keep code changes as small as possible; avoid adding unnecessary files.
+- Always seek the minimal diff that solves the problem.
+- For quick tests or debugging, place helper scripts under a `debug/` directory for easy cleanup.
+
+## Plan First
+- Before writing code, present a clear plan for my review.
+- Wait for confirmation before proceeding with implementation.
+
+## Ask When Uncertain
+- If anything is unclear, stop and ask rather than making assumptions.
+
+## Incremental Development
+- Break tasks into small, verifiable steps.
+- After each step, verify correctness and efficiency before continuing.
+- Do not proceed to the next step until the current one is validated.
+
+## Large Project Strategy
+- Decouple small, isolated components for quick development and testing.
+- Verify each component works independently before integration.
+- Only run end-to-end verification after individual pieces are validated, as it is time-consuming.

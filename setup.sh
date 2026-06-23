@@ -41,3 +41,5 @@ cp $MY_DOTFILES_DIR/dotfiles/vimrc ~/.vimrc
 cp $MY_DOTFILES_DIR/dotfiles/tmux.conf.ini ~/.tmux.conf
 cp $MY_DOTFILES_DIR/dotfiles/gitconfig.ini ~/.gitconfig
 cp $MY_DOTFILES_DIR/dotfiles/gitignore.ini ~/.gitignore
+mkdir -p ~/.claude
+cp $MY_DOTFILES_DIR/dotfiles/claude ~/.claude/CLAUDE.md
