@@ -36,10 +36,22 @@ if [[ ! -d ${ZSH_CUSTOM}/.fzf ]]; then
     mv ${ZSH_CUSTOM}/.fzf/bin/* /usr/local/bin/
 fi
 
+export PATH="$HOME/.local/bin:$PATH"
+if ! command -v claude >/dev/null 2>&1; then
+    curl -fsSL https://claude.ai/install.sh | bash
+fi
+claude --version
+
 cp $MY_DOTFILES_DIR/dotfiles/zshrc ~/.zshrc
 cp $MY_DOTFILES_DIR/dotfiles/vimrc ~/.vimrc
 cp $MY_DOTFILES_DIR/dotfiles/tmux.conf.ini ~/.tmux.conf
 cp $MY_DOTFILES_DIR/dotfiles/gitconfig.ini ~/.gitconfig
 cp $MY_DOTFILES_DIR/dotfiles/gitignore.ini ~/.gitignore
-mkdir -p ~/.claude
+mkdir -p "$HOME/.claude/skills" "$HOME/.cursor/skills"
 cp $MY_DOTFILES_DIR/dotfiles/claude ~/.claude/CLAUDE.md
+# Remove the previous skill name so agents do not load both versions.
+rm -rf -- \
+    "$HOME/.claude/skills/python-object-design" \
+    "$HOME/.cursor/skills/python-object-design"
+cp -R "$MY_DOTFILES_DIR/skills/." "$HOME/.claude/skills/"
+cp -R "$MY_DOTFILES_DIR/skills/." "$HOME/.cursor/skills/"

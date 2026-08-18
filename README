@@ -8,3 +8,44 @@ This is a collection of dotfiles for my development environment.
 export MY_DOTFILES_DIR="$HOME/.my_dotfiles"
 git clone https://github.com/zyksir/dotfiles.git $MY_DOTFILES_DIR && bash $MY_DOTFILES_DIR/setup.sh && zsh
 ```
+
+`setup.sh`:
+
+1. Installs the Claude Code CLI with Anthropic's native installer when `claude`
+   is not already available.
+2. Adds `~/.local/bin` to `PATH` for the setup process and future Zsh sessions.
+3. Verifies the installation with `claude --version`.
+4. Copies every skill under `skills/` into both `~/.claude/skills/` and
+   `~/.cursor/skills/`.
+
+The first interactive `claude` session may still require authentication.
+
+## Agent skills
+
+Personal skills live under `skills/<skill-name>/SKILL.md`.
+
+Current skills:
+
+- `technical-blog-writing` — write and edit evidence-backed engineering posts
+- `code-object-design` — design and review maintainable Python, C++, and CUDA code
+
+### Loading and invocation
+
+Claude Code and Cursor discover these installed skills automatically. They see
+each skill's name and description, then load its full instructions only when the
+task is relevant. No separate enable command is required.
+
+To force a specific skill, invoke it by name:
+
+```text
+/technical-blog-writing Write a post from these benchmark notes.
+/code-object-design Review this CUDA API without over-engineering it.
+```
+
+Start a new Claude Code or Cursor session after running setup so the installed
+skills are discovered.
+
+Filesystem installation applies to Claude Code or Cursor running on that
+machine, including a cloud VM where `setup.sh` was executed. Claude.ai-managed
+cloud sessions use skills enabled on the Claude account instead; they do not
+read `~/.claude/skills/` from another machine.

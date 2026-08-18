@@ -11,6 +11,7 @@ export ZSH="$HOME/.zsh"
 export DISABLE_AUTO_UPDATE="true"
 export DISABLE_UPDATE_PROMPT="true"
 export MY_DOTFILES_DIR="$HOME/.my_dotfiles"
+export PATH="$HOME/.local/bin:$PATH"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions z autoupdate)
 UPDATE_ZSH_DAYS=16
