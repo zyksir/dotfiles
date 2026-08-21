@@ -12,9 +12,9 @@ git clone https://github.com/zyksir/dotfiles.git $MY_DOTFILES_DIR && bash $MY_DO
 `setup.sh`:
 
 1. Installs the Claude Code CLI with Anthropic's native installer when `claude`
-   is not already available.
+   is not already available. A failed install is non-fatal; setup continues.
 2. Adds `~/.local/bin` to `PATH` for the setup process and future Zsh sessions.
-3. Verifies the installation with `claude --version`.
+3. Verifies the installation with `claude --version` when the CLI is present.
 4. Copies every skill under `skills/` into both `~/.claude/skills/` and
    `~/.cursor/skills/`.
 

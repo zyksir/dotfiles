@@ -38,9 +38,13 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 if ! command -v claude >/dev/null 2>&1; then
-    curl -fsSL https://claude.ai/install.sh | bash
+    curl -fsSL https://claude.ai/install.sh | bash || echo "warning: claude install failed, continuing"
 fi
-claude --version
+if command -v claude >/dev/null 2>&1; then
+    claude --version
+else
+    echo "warning: claude not available, skipping"
+fi
 
 cp $MY_DOTFILES_DIR/dotfiles/zshrc ~/.zshrc
 cp $MY_DOTFILES_DIR/dotfiles/vimrc ~/.vimrc
